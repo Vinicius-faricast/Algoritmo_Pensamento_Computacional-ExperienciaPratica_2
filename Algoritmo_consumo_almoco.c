@@ -55,7 +55,26 @@ int main(void)
     // Calcula a média dividindo o total pelo número de elementos do vetor
     mediaNumeroAlmocos = (float)totalAlmocos / 7;
 
-    printf("Total de almocos consumidos: %d\n", totalAlmocos);
-    printf("Media de almocos consumidos: %.2f\n", mediaNumeroAlmocos);
+    // Exibe o relatorio semanal
+    printf("\n");
+    printf("====================================\n");
+    printf("   RESUMO DO CONSUMO DE ALMOCOS\n");
+    printf("====================================\n\n");
+
+    printf("%-16s | %s\n", "Dia da semana", "Quantidade");
+    printf("------------------------------------\n");
+
+    // Percorre os vetores para exibir os dados diarios
+    for (int i = 0; i < 7; i++)
+    {
+        printf("%-16s | %d almocos\n",
+               diasDaSemana[i],
+               consumoDeAlmocoDiario[i]);
+    }
+
+    printf("------------------------------------\n");
+    printf("Total semanal: %d almocos\n", totalAlmocos);
+    printf("Media diaria:  %.2f almocos\n", mediaNumeroAlmocos);
+    printf("====================================\n");
     return 0;
 }
